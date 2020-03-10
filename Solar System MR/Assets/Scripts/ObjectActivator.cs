@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SphereCommands : MonoBehaviour
+public class ObjectActivator : MonoBehaviour
 {
     // Called by GazeGestureManager when the user performs a Select gesture
     void OnSelect()
