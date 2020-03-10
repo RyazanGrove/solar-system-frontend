@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 8389623125832451416}
   - component: {fileID: 8389623125832451419}
   - component: {fileID: 8389623125832451418}
+  - component: {fileID: 5132121744377719117}
   m_Layer: 0
   m_Name: ModelContainer
   m_TagString: Untagged
@@ -151,6 +152,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b4d02a38563ae41af192b168415c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5132121744377719117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8389623125832451417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff70180d0df5c504183d7b30478fe31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetName: Sun
+  upDistance: 0.5
+  cameraTransform: {fileID: 0}
 --- !u!1 &8389623126052864501
 GameObject:
   m_ObjectHideFlags: 0

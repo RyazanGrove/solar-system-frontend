@@ -27,6 +27,14 @@ public class ShowPlanetName : MonoBehaviour
         textObject.transform.Rotate(90f,0f,180f);
         textMesh = textObject.AddComponent<TextMesh>();
         textMesh.text = planetName;
+        if(planetName == "")
+        {
+            Debug.LogWarning("There is no name for planet on object " + gameObject.name);
+        }
+        if (cameraTransform == null)
+        {
+            Debug.LogWarning("Camera Transform is not assigned to camera object on object " + gameObject.name);
+        }
     }
 
     // Update is called once per frame

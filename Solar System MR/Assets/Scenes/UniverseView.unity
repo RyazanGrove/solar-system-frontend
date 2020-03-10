@@ -2060,6 +2060,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1770535950}
     m_Modifications:
+    - target: {fileID: 5132121744377719117, guid: 060b7c13a8cea064ea5855535fa35776,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
+    - target: {fileID: 5132121744377719117, guid: 060b7c13a8cea064ea5855535fa35776,
+        type: 3}
+      propertyPath: planetName
+      value: Sun
+      objectReference: {fileID: 0}
     - target: {fileID: 8389623125832451419, guid: 060b7c13a8cea064ea5855535fa35776,
         type: 3}
       propertyPath: centralPoint
