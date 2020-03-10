@@ -8,3 +8,4 @@ Solar System MR/Assembly-CSharp.csproj
 Solar System MR/Solar System MR.sln
 Solar System MR/Assets/WSATestCertificate.pfx
 Solar System MR/Assets/WSATestCertificate.pfx.meta
+*.meta
