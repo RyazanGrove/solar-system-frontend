@@ -3,5 +3,8 @@ Solar System MR/Logs
 Solar System MR/obj
 Solar System MR/Temp
 Solar System MR/Builds
-*.meta
 Solar System MR/.vs/*
+Solar System MR/Assembly-CSharp.csproj
+Solar System MR/Solar System MR.sln
+Solar System MR/Assets/WSATestCertificate.pfx
+Solar System MR/Assets/WSATestCertificate.pfx.meta
