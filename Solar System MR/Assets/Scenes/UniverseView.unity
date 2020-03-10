@@ -672,6 +672,11 @@ PrefabInstance:
       propertyPath: centralPoint
       value: 
       objectReference: {fileID: 1757480611}
+    - target: {fileID: 1993468206717096857, guid: 3a9007cb875acc540b5dcd8e5ad42d99,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 1993468206717096858, guid: 3a9007cb875acc540b5dcd8e5ad42d99,
         type: 3}
       propertyPath: cameraTransform
@@ -691,6 +696,11 @@ PrefabInstance:
       propertyPath: centralPoint
       value: 
       objectReference: {fileID: 1757480611}
+    - target: {fileID: 3112771539687894113, guid: 9e9280a99bd3a6d4d9536c0149cc1ad0,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3112771539687894114, guid: 9e9280a99bd3a6d4d9536c0149cc1ad0,
         type: 3}
       propertyPath: cameraTransform
@@ -835,6 +845,11 @@ PrefabInstance:
       propertyPath: centralPoint
       value: 
       objectReference: {fileID: 1757480611}
+    - target: {fileID: 3350508335655285282, guid: 9be0eb1c954a08f4b8a8689b6f2f54d3,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9be0eb1c954a08f4b8a8689b6f2f54d3, type: 3}
 --- !u!1001 &5630877426477857808
@@ -854,6 +869,11 @@ PrefabInstance:
       propertyPath: centralPoint
       value: 
       objectReference: {fileID: 1757480611}
+    - target: {fileID: 5630877427411827199, guid: 925d0c4092a861c43bb6e2d50970c564,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5630877428405641696, guid: 925d0c4092a861c43bb6e2d50970c564,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -988,6 +1008,11 @@ PrefabInstance:
       propertyPath: centralPoint
       value: 
       objectReference: {fileID: 1757480611}
+    - target: {fileID: 5755062779012114224, guid: 7c45b4b6a3a11fa4ab82595427c2662c,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5755062779012114225, guid: 7c45b4b6a3a11fa4ab82595427c2662c,
         type: 3}
       propertyPath: cameraTransform
@@ -1072,6 +1097,11 @@ PrefabInstance:
       propertyPath: centralPoint
       value: 
       objectReference: {fileID: 1757480611}
+    - target: {fileID: 5788335739554834823, guid: 9ed7c136044b22940b0a5b82bd52a257,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed7c136044b22940b0a5b82bd52a257, type: 3}
 --- !u!1001 &8289481185668128185
@@ -1146,6 +1176,11 @@ PrefabInstance:
       propertyPath: centralPoint
       value: 
       objectReference: {fileID: 1757480611}
+    - target: {fileID: 8289481187346887716, guid: 5af36de926845cd4b95244ccd4839915,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8289481187346887719, guid: 5af36de926845cd4b95244ccd4839915,
         type: 3}
       propertyPath: cameraTransform
@@ -1180,6 +1215,11 @@ PrefabInstance:
       propertyPath: centralPoint
       value: 
       objectReference: {fileID: 1757480611}
+    - target: {fileID: 8389623125832451419, guid: 060b7c13a8cea064ea5855535fa35776,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8389623126052864500, guid: 060b7c13a8cea064ea5855535fa35776,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1254,6 +1294,11 @@ PrefabInstance:
       propertyPath: centralPoint
       value: 
       objectReference: {fileID: 1757480611}
+    - target: {fileID: 9117601967622911139, guid: e79f1d54c0425264b900ff28a3d06018,
+        type: 3}
+      propertyPath: rotationSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 9117601967622911140, guid: e79f1d54c0425264b900ff28a3d06018,
         type: 3}
       propertyPath: cameraTransform
