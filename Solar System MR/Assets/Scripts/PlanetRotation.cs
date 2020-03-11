@@ -14,7 +14,11 @@ public class PlanetRotation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(centralPoint == null)
+        {
+            Debug.Log("centralPoint is not assing onto object " + gameObject.name + ". Default value will be used");
+            centralPoint =  gameObject.transform.parent != null ? gameObject.transform.parent: gameObject.transform;
+        }
     }
 
     // Update is called once per frame
