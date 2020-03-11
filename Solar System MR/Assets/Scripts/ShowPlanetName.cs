@@ -34,6 +34,7 @@ public class ShowPlanetName : MonoBehaviour
         if (cameraTransform == null)
         {
             Debug.LogWarning("Camera Transform is not assigned to camera object on object " + gameObject.name);
+            textObject.SetActive(false);
         }
     }
 
