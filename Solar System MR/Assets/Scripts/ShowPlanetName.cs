@@ -12,10 +12,6 @@ public class ShowPlanetName : MonoBehaviour
     public float upDistance;
 
     [SerializeField]
-    [Range(-2f, 2f)]
-    public float leftRightDistance;
-
-    [SerializeField]
     public Transform cameraTransform;
 
     private TextMesh textMesh;
@@ -27,7 +23,7 @@ public class ShowPlanetName : MonoBehaviour
         textObject = new GameObject();
         textObject.transform.parent = gameObject.transform;
         textObject.transform.position = gameObject.transform.position;
-        textObject.transform.Translate(new Vector3(leftRightDistance,upDistance,0f));
+        textObject.transform.Translate(new Vector3(0f,upDistance,0f));
         textObject.transform.Rotate(90f,0f,180f);
         textMesh = textObject.AddComponent<TextMesh>();
 
