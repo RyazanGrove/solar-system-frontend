@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetToSpawn: 1
   centralPoint: {fileID: 805234404}
+  cameraTransform: {fileID: 1398206716}
   sun: {fileID: 8389623126052864501, guid: 060b7c13a8cea064ea5855535fa35776, type: 3}
   mercury: {fileID: 9117601968814390306, guid: e79f1d54c0425264b900ff28a3d06018, type: 3}
   venus: {fileID: 1993468206712266443, guid: 3a9007cb875acc540b5dcd8e5ad42d99, type: 3}

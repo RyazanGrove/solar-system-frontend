@@ -11,6 +11,9 @@ public class PlanetSpawner : MonoBehaviour
     private Transform centralPoint;
 
     [SerializeField]
+    private Transform cameraTransform;
+
+    [SerializeField]
     private GameObject sun;
     [SerializeField]
     private GameObject mercury;
@@ -100,6 +103,21 @@ public class PlanetSpawner : MonoBehaviour
         else
         {
             Debug.LogWarning("PlanetRotation script component has not been found anywhere in object " + prefab.name);
+        }
+
+        if (cameraTransform != null)
+        {
+            ShowPlanetName showPlanetNameComponent = prefab.GetComponentInChildren<ShowPlanetName>();
+            if (showPlanetNameComponent != null)
+            {
+                Debug.Log("ShowPlanetName component will be standardized onto object " + showPlanetNameComponent.name);
+                showPlanetNameComponent.cameraTransform = cameraTransform;
+                showPlanetNameComponent.upDistance = 0.7f;
+            }
+            else
+            {
+                Debug.LogWarning("ShowPlanetName script component has not been found anywhere in object " + prefab.name);
+            }
         }
     }
 }
