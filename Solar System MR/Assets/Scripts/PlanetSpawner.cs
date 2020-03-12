@@ -41,6 +41,7 @@ public class PlanetSpawner : MonoBehaviour
             centralPoint = gameObject.transform;
             Debug.LogWarning("centralPoint is not assing in object " + gameObject.name);
         }
+        planetToSpawn = PlayerPrefs.GetInt ("planetNumber");
 
         switch (planetToSpawn)
         {
@@ -81,6 +82,6 @@ public class PlanetSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99aa33117c6994258916cb34f840f186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetToSpawn: 0
+  planetToSpawn: 1
   centralPoint: {fileID: 805234404}
   sun: {fileID: 8389623126052864501, guid: 060b7c13a8cea064ea5855535fa35776, type: 3}
   mercury: {fileID: 9117601968814390306, guid: e79f1d54c0425264b900ff28a3d06018, type: 3}
