@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetName: Earth
-  upDistance: 0
+  upDistance: 0.5
   cameraTransform: {fileID: 0}
 --- !u!1 &5630877427439416105
 GameObject:

@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetName: Mercury
-  upDistance: 0
+  upDistance: 0.35
   cameraTransform: {fileID: 0}
 --- !u!1 &9117601968128926172
 GameObject:

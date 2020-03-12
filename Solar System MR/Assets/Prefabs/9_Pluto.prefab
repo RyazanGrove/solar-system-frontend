@@ -197,5 +197,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetName: Pluto
-  upDistance: 0
+  upDistance: 0.3
   cameraTransform: {fileID: 0}

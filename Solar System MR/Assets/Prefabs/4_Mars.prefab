@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetName: Mars
-  upDistance: 0
+  upDistance: 0.35
   cameraTransform: {fileID: 0}
 --- !u!1 &5755062779529230496
 GameObject:

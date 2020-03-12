@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetName: Saturn
-  upDistance: 0
+  upDistance: 0.7
   cameraTransform: {fileID: 0}
 --- !u!1 &3112771540132258631
 GameObject:

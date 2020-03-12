@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b4d02a38563ae41af192b168415c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetNumber: 0
 --- !u!114 &5132121744377719117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetName: Sun
-  upDistance: 0.5
+  upDistance: 1.2
   cameraTransform: {fileID: 0}
 --- !u!1 &8389623126052864501
 GameObject:
