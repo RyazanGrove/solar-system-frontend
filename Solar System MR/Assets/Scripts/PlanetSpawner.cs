@@ -77,11 +77,29 @@ public class PlanetSpawner : MonoBehaviour
                 break;
         }
         planet.transform.parent = gameObject.transform;
+        standardizedPrefabParameters(planet);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    private void standardizedPrefabParameters(GameObject prefab)
+    {
+        PlanetRotation planetRotationComponent = prefab.GetComponentInChildren<PlanetRotation>();
+        if(planetRotationComponent != null)
+        {
+            Debug.Log("PlanetRotation component will be standardized onto object " + planetRotationComponent.name);
+            planetRotationComponent.rotationSpeed = 20f;
+            planetRotationComponent.centralPoint = centralPoint;
+            Transform planetModelContainerTransform = prefab.transform.GetChild(0);
+            planetModelContainerTransform.localScale = Vector3.one;
+        }
+        else
+        {
+            Debug.LogWarning("PlanetRotation script component has not been found anywhere in object " + prefab.name);
+        }
     }
 }

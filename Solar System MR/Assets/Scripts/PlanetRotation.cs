@@ -5,18 +5,18 @@ using UnityEngine;
 public class PlanetRotation : MonoBehaviour
 {
     [SerializeField]
-    private Transform centralPoint;
+    public Transform centralPoint;
 
     [SerializeField]
     [Range(0.1f,50f)]
-    private float rotationSpeed;
+    public float rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         if(centralPoint == null)
         {
-            Debug.Log("centralPoint is not assing onto object " + gameObject.name + ". Default value will be used");
+            Debug.LogWarning("centralPoint is not assing onto object " + gameObject.name + ". Default value will be used");
             centralPoint =  gameObject.transform.parent != null ? gameObject.transform.parent: gameObject.transform;
         }
     }
