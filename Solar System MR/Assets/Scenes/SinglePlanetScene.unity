@@ -164,13 +164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99aa33117c6994258916cb34f840f186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetToSpawn: 1
+  planetToSpawn: 3
   centralPoint: {fileID: 805234404}
   cameraTransform: {fileID: 1398206716}
   sun: {fileID: 8389623126052864501, guid: 060b7c13a8cea064ea5855535fa35776, type: 3}
   mercury: {fileID: 9117601968814390306, guid: e79f1d54c0425264b900ff28a3d06018, type: 3}
   venus: {fileID: 1993468206712266443, guid: 3a9007cb875acc540b5dcd8e5ad42d99, type: 3}
-  earth: {fileID: 5630877428405641727, guid: 925d0c4092a861c43bb6e2d50970c564, type: 3}
+  earth: {fileID: 6067670878141685904, guid: d03ba3c39da5b754a8cb4e5a600d7692, type: 3}
   mars: {fileID: 5755062778752600099, guid: 7c45b4b6a3a11fa4ab82595427c2662c, type: 3}
   jupyter: {fileID: 3350508334241637881, guid: 9be0eb1c954a08f4b8a8689b6f2f54d3, type: 3}
   saturn: {fileID: 3112771540526794952, guid: 9e9280a99bd3a6d4d9536c0149cc1ad0, type: 3}
