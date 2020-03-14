@@ -5,14 +5,14 @@ using UnityEngine;
 public class ChangeScale : MonoBehaviour
 {
     [SerializeField]
-    private bool increase;
+    private bool increase = true;
 
     [SerializeField]
     private Transform target;
 
     [SerializeField]
-    [Range(0.1f,2f)]
-    private float value;
+    [Range(0.1f, 2f)]
+    private float value = 0.1f;
 
     public void OnSelect()
     {
