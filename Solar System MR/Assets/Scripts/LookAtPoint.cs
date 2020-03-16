@@ -19,6 +19,7 @@ public class LookAtPoint : MonoBehaviour
         if(cameraTransform != null)
         {
             gameObject.transform.LookAt(cameraTransform);
+            gameObject.transform.Rotate(new Vector3(0f, 180f, 0f));
         }
     }
 }

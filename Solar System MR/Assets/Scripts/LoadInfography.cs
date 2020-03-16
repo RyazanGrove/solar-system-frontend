@@ -16,7 +16,7 @@ public class LoadInfography : MonoBehaviour
         plane.transform.parent = gameObject.transform;
         plane.transform.position = new Vector3(1.5f, 0f, 1.5f);
         plane.transform.localScale = new Vector3(0.15f, 0.2f, 0.2f);
-        plane.transform.Rotate(90, -180, -180);
+        plane.transform.Rotate(90f, 0f, -180f);
 
         Renderer rend = plane.GetComponent<Renderer>();
         currentPage = 1;
