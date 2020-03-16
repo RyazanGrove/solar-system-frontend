@@ -666,6 +666,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 29283684433372410, guid: b2e656f7fa0d8514c9d92b67364e273b,
+        type: 3}
+      propertyPath: loadInfographyComponent
+      value: 
+      objectReference: {fileID: 471135279}
+    - target: {fileID: 29283684433372410, guid: b2e656f7fa0d8514c9d92b67364e273b,
+        type: 3}
+      propertyPath: nextPage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1774186200444832628, guid: b2e656f7fa0d8514c9d92b67364e273b,
         type: 3}
       propertyPath: cameraTransform
@@ -731,5 +741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InfographicMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7133909589245590703, guid: b2e656f7fa0d8514c9d92b67364e273b,
+        type: 3}
+      propertyPath: loadInfographyComponent
+      value: 
+      objectReference: {fileID: 471135279}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2e656f7fa0d8514c9d92b67364e273b, type: 3}

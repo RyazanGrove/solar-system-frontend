@@ -36,6 +36,10 @@ public class ChangeScale : MonoBehaviour
             }
 
         }
+        else
+        {
+            Debug.LogWarning("target Transform has not been found on object " + gameObject.name);
+        }
     }
 }
 

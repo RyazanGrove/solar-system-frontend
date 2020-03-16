@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 141327690006620920}
   - component: {fileID: 3633787203121234824}
   - component: {fileID: 2984460697826978373}
+  - component: {fileID: 29283684433372410}
   m_Layer: 0
   m_Name: NextButton
   m_TagString: Untagged
@@ -171,6 +172,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &29283684433372410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570781995280047505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f6f073e710ddd4c8a7b246340ea002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadInfographyComponent: {fileID: 0}
+  nextPage: 1
 --- !u!1 &6142886038808482621
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +198,7 @@ GameObject:
   - component: {fileID: 7173665720275635851}
   - component: {fileID: 9104534068309530491}
   - component: {fileID: 4058665082016741055}
+  - component: {fileID: 7133909589245590703}
   m_Layer: 0
   m_Name: PreviousButton
   m_TagString: Untagged
@@ -264,6 +280,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &7133909589245590703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6142886038808482621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f6f073e710ddd4c8a7b246340ea002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadInfographyComponent: {fileID: 0}
+  nextPage: 0
 --- !u!1 &8695136690207553570
 GameObject:
   m_ObjectHideFlags: 0
