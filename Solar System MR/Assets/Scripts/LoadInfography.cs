@@ -11,6 +11,11 @@ public class LoadInfography : MonoBehaviour
     private int currentPage;
     private string currentProgress;
 
+    [SerializeField]
+    private GameObject completeButton;
+    [SerializeField]
+    private GameObject startButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +36,7 @@ public class LoadInfography : MonoBehaviour
         {
             currentProgress = "0000";
         }
+        checkCompleteOrStartButton();
     }
 
     // Update is called once per frame
@@ -46,6 +52,7 @@ public class LoadInfography : MonoBehaviour
             currentPage++;
             Renderer rend = plane.GetComponent<Renderer>();
             rend.material.mainTexture = Resources.Load("3/" + currentPage.ToString()) as Texture;
+            checkCompleteOrStartButton();
         }
     }
 
@@ -56,6 +63,7 @@ public class LoadInfography : MonoBehaviour
             currentPage--;
             Renderer rend = plane.GetComponent<Renderer>();
             rend.material.mainTexture = Resources.Load("3/" + currentPage.ToString()) as Texture;
+            checkCompleteOrStartButton();
         }
     }
 
@@ -69,11 +77,39 @@ public class LoadInfography : MonoBehaviour
             PlayerPrefs.SetString("planetProgress3", currentProgress);
         }
         Debug.Log(currentProgress + " = is current Progress. Page number is " + currentPage.ToString());
+        checkCompleteOrStartButton();
     }
 
     public void ClearProgress()
     {
         PlayerPrefs.SetString("planetProgress3", "0000");
         currentProgress = "0000";
+        checkCompleteOrStartButton();
+    }
+
+    private void checkCompleteOrStartButton()
+    {
+        if(completeButton == null)
+        {
+            Debug.LogWarning("CompleteButton field is not assigned on object " + gameObject.name);
+            return;
+        }
+        if (startButton == null)
+        {
+            Debug.LogWarning("StartButton field is not assigned on object " + gameObject.name);
+            return;
+        }
+
+        char[] charArray = currentProgress.ToCharArray();
+        if (charArray[currentPage - 1] == '0')
+        {
+            completeButton.SetActive(true);
+            startButton.SetActive(false);
+        }
+        else
+        {
+            completeButton.SetActive(false);
+            startButton.SetActive(true);
+        }
     }
 }

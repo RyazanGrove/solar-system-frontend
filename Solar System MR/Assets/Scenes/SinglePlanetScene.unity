@@ -246,6 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f61bd49345625e34a870705412c73ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraTransformForUserProgress: {fileID: 1398206716}
+  completeButton: {fileID: 936455431}
+  startButton: {fileID: 1913575090}
 --- !u!1 &559708799
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +336,12 @@ Transform:
   m_Father: {fileID: 559708800}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &936455431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8695136690207553570, guid: b2e656f7fa0d8514c9d92b67364e273b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6429815730543594131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1276734669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -491,6 +500,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3546246504ecc574da9a5b92c7297832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1913575090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6751869191371957763, guid: b2e656f7fa0d8514c9d92b67364e273b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6429815730543594131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2076784615
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +691,11 @@ PrefabInstance:
       propertyPath: nextPage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1486276451886185269, guid: b2e656f7fa0d8514c9d92b67364e273b,
+        type: 3}
+      propertyPath: loadInfographyComponent
+      value: 
+      objectReference: {fileID: 471135279}
     - target: {fileID: 1774186200444832628, guid: b2e656f7fa0d8514c9d92b67364e273b,
         type: 3}
       propertyPath: cameraTransform
