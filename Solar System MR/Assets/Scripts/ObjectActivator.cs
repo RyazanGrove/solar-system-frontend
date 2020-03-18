@@ -12,4 +12,9 @@ public class ObjectActivator : MonoBehaviour
 //        Application.LoadLevel("NewScene");
         SceneManager.LoadScene("SinglePlanetScene");
     }
+
+    public int GetPlanetNumber()
+    {
+        return planetNumber;
+    }
 }

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 6067670878900566160}
   - component: {fileID: 6067670878900566158}
   - component: {fileID: 6067670878900566159}
+  - component: {fileID: 2478767497138845808}
   m_Layer: 0
   m_Name: 31_Earth_ModelContainer
   m_TagString: Untagged
@@ -200,6 +201,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetName: Earth
   upDistance: 0.5
+  cameraTransform: {fileID: 0}
+--- !u!114 &2478767497138845808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067670878900566162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b6162b0564d094fa49694b557effd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userProgress: 
+  downDistance: -0.5
   cameraTransform: {fileID: 0}
 --- !u!1001 &1878097440561757736
 PrefabInstance:

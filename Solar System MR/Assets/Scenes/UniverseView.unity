@@ -299,6 +299,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1770535950}
     m_Modifications:
+    - target: {fileID: 2478767497138845808, guid: d03ba3c39da5b754a8cb4e5a600d7692,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     - target: {fileID: 6067670878141685903, guid: d03ba3c39da5b754a8cb4e5a600d7692,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -364,6 +369,11 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 2042930092}
+    - target: {fileID: 6067670878900566159, guid: d03ba3c39da5b754a8cb4e5a600d7692,
+        type: 3}
+      propertyPath: planetName
+      value: "\u0417\u0435\u043C\u043B\u044F"
+      objectReference: {fileID: 0}
     - target: {fileID: 6067670878900566160, guid: d03ba3c39da5b754a8cb4e5a600d7692,
         type: 3}
       propertyPath: centralPoint
@@ -689,6 +699,16 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 2042930092}
+    - target: {fileID: 215782422581043469, guid: bda08ca429ab96a4a9f54fa28a29692f,
+        type: 3}
+      propertyPath: planetName
+      value: "\u041F\u043B\u0443\u0442\u043E\u043D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820345265074984392, guid: bda08ca429ab96a4a9f54fa28a29692f,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bda08ca429ab96a4a9f54fa28a29692f, type: 3}
 --- !u!1001 &1993468206078052940
@@ -773,6 +793,16 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 2042930092}
+    - target: {fileID: 1993468206717096858, guid: 3a9007cb875acc540b5dcd8e5ad42d99,
+        type: 3}
+      propertyPath: planetName
+      value: "\u0412\u0435\u043D\u0435\u0440\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186180278559585878, guid: 3a9007cb875acc540b5dcd8e5ad42d99,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a9007cb875acc540b5dcd8e5ad42d99, type: 3}
 --- !u!1001 &3112771541160868692
@@ -797,6 +827,11 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 2042930092}
+    - target: {fileID: 3112771539687894114, guid: 9e9280a99bd3a6d4d9536c0149cc1ad0,
+        type: 3}
+      propertyPath: planetName
+      value: "\u0421\u0430\u0442\u0443\u0440\u043D"
+      objectReference: {fileID: 0}
     - target: {fileID: 3112771540526794952, guid: 9e9280a99bd3a6d4d9536c0149cc1ad0,
         type: 3}
       propertyPath: m_Name
@@ -857,6 +892,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4972348356926060522, guid: 9e9280a99bd3a6d4d9536c0149cc1ad0,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e9280a99bd3a6d4d9536c0149cc1ad0, type: 3}
 --- !u!1001 &3350508335905050237
@@ -866,6 +906,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1770535950}
     m_Modifications:
+    - target: {fileID: 3304028166480902681, guid: 9be0eb1c954a08f4b8a8689b6f2f54d3,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     - target: {fileID: 3350508334241637880, guid: 9be0eb1c954a08f4b8a8689b6f2f54d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -931,6 +976,11 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 2042930092}
+    - target: {fileID: 3350508335655285277, guid: 9be0eb1c954a08f4b8a8689b6f2f54d3,
+        type: 3}
+      propertyPath: planetName
+      value: "\u042E\u043F\u0438\u0442\u0435\u0440"
+      objectReference: {fileID: 0}
     - target: {fileID: 3350508335655285282, guid: 9be0eb1c954a08f4b8a8689b6f2f54d3,
         type: 3}
       propertyPath: centralPoint
@@ -1039,6 +1089,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1770535950}
     m_Modifications:
+    - target: {fileID: 4729532242625985729, guid: 7c45b4b6a3a11fa4ab82595427c2662c,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     - target: {fileID: 5755062778752600099, guid: 7c45b4b6a3a11fa4ab82595427c2662c,
         type: 3}
       propertyPath: m_Name
@@ -1114,6 +1169,11 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 2042930092}
+    - target: {fileID: 5755062779012114225, guid: 7c45b4b6a3a11fa4ab82595427c2662c,
+        type: 3}
+      propertyPath: planetName
+      value: "\u041C\u0430\u0440\u0441"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c45b4b6a3a11fa4ab82595427c2662c, type: 3}
 --- !u!1001 &5788335738470943115
@@ -1188,6 +1248,11 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 2042930092}
+    - target: {fileID: 5788335739554834822, guid: 9ed7c136044b22940b0a5b82bd52a257,
+        type: 3}
+      propertyPath: planetName
+      value: "\u0423\u0440\u0430\u043D"
+      objectReference: {fileID: 0}
     - target: {fileID: 5788335739554834823, guid: 9ed7c136044b22940b0a5b82bd52a257,
         type: 3}
       propertyPath: centralPoint
@@ -1198,6 +1263,11 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7973126381915306135, guid: 9ed7c136044b22940b0a5b82bd52a257,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed7c136044b22940b0a5b82bd52a257, type: 3}
 --- !u!1001 &8289481185668128185
@@ -1207,6 +1277,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1770535950}
     m_Modifications:
+    - target: {fileID: 6645213776505780788, guid: 5af36de926845cd4b95244ccd4839915,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     - target: {fileID: 8289481187193063362, guid: 5af36de926845cd4b95244ccd4839915,
         type: 3}
       propertyPath: m_Name
@@ -1282,6 +1357,11 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 2042930092}
+    - target: {fileID: 8289481187346887719, guid: 5af36de926845cd4b95244ccd4839915,
+        type: 3}
+      propertyPath: planetName
+      value: "\u041D\u0435\u043F\u0442\u0443\u043D"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af36de926845cd4b95244ccd4839915, type: 3}
 --- !u!1001 &8389623124965895841
@@ -1299,8 +1379,13 @@ PrefabInstance:
     - target: {fileID: 5132121744377719117, guid: 060b7c13a8cea064ea5855535fa35776,
         type: 3}
       propertyPath: planetName
-      value: Sun
+      value: "\u0421\u043E\u043B\u043D\u0446\u0435"
       objectReference: {fileID: 0}
+    - target: {fileID: 5827735039695725334, guid: 060b7c13a8cea064ea5855535fa35776,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     - target: {fileID: 8389623125832451417, guid: 060b7c13a8cea064ea5855535fa35776,
         type: 3}
       propertyPath: m_Name
@@ -1400,6 +1485,16 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 2042930092}
+    - target: {fileID: 9117601967622911140, guid: e79f1d54c0425264b900ff28a3d06018,
+        type: 3}
+      propertyPath: planetName
+      value: "\u041C\u0435\u0440\u043A\u0443\u0440\u0438\u0439"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117601967622911141, guid: e79f1d54c0425264b900ff28a3d06018,
+        type: 3}
+      propertyPath: planetNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9117601968814390306, guid: e79f1d54c0425264b900ff28a3d06018,
         type: 3}
       propertyPath: m_Name
@@ -1460,5 +1555,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9118443233574889202, guid: e79f1d54c0425264b900ff28a3d06018,
+        type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2042930092}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79f1d54c0425264b900ff28a3d06018, type: 3}

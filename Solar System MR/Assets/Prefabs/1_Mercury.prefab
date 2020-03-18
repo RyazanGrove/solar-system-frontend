@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9117601967622911139}
   - component: {fileID: 9117601967622911141}
   - component: {fileID: 9117601967622911140}
+  - component: {fileID: 9118443233574889202}
   m_Layer: 0
   m_Name: 1_Mercury_ModelContainer
   m_TagString: Untagged
@@ -76,6 +77,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetName: Mercury
   upDistance: 0.35
+  cameraTransform: {fileID: 0}
+--- !u!114 &9118443233574889202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9117601967622911137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b6162b0564d094fa49694b557effd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userProgress: 10
+  downDistance: -0.35
   cameraTransform: {fileID: 0}
 --- !u!1 &9117601968128926172
 GameObject:

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 3350508335655285282}
   - component: {fileID: 3350508335655285276}
   - component: {fileID: 3350508335655285277}
+  - component: {fileID: 3304028166480902681}
   m_Layer: 0
   m_Name: 5_Jupiter_ModelContainer
   m_TagString: Untagged
@@ -199,6 +200,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetName: Jupiter
   upDistance: 0.7
+  cameraTransform: {fileID: 0}
+--- !u!114 &3304028166480902681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350508335655285280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b6162b0564d094fa49694b557effd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userProgress: 
+  downDistance: -0.7
   cameraTransform: {fileID: 0}
 --- !u!1001 &5703200963122638655
 PrefabInstance:
