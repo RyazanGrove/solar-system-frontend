@@ -9,7 +9,6 @@ public class ObjectActivator : MonoBehaviour
     public void OnSelect()
     {
         PlayerPrefs.SetInt ("planetNumber", planetNumber);
-//        Application.LoadLevel("NewScene");
         SceneManager.LoadScene("SinglePlanetScene");
     }
 

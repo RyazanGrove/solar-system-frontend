@@ -42,7 +42,6 @@ public class ShowUserProgress : MonoBehaviour
                 userProgressLoad = "0000";
             }
             userProgress = SetProgressToUserProgressComponent(userProgressLoad);
-            Debug.Log(userProgress + " = userProgress| userProgressLoad= " + userProgressLoad);
         }
 
         //textMesh settings

@@ -10,6 +10,7 @@ public class LoadInfography : MonoBehaviour
     private GameObject plane;
     private int currentPage;
     private string currentProgress;
+    private int planetNumber;
 
     [SerializeField]
     private GameObject completeButton;
@@ -28,7 +29,13 @@ public class LoadInfography : MonoBehaviour
 
         Renderer rend = plane.GetComponent<Renderer>();
         currentPage = 1;
-        rend.material.mainTexture = Resources.Load("3/" + currentPage.ToString()) as Texture;
+        planetNumber = PlayerPrefs.GetInt("planetNumber");
+        if(planetNumber < 1 || planetNumber > 10)
+        {
+            planetNumber = 0;
+        }
+        Debug.Log("Planet number is " + planetNumber);
+        rend.material.mainTexture = Resources.Load(planetNumber.ToString() + "/" + currentPage.ToString()) as Texture;
 
         //Load user progress
         currentProgress = PlayerPrefs.GetString("planetProgress3");
@@ -51,7 +58,7 @@ public class LoadInfography : MonoBehaviour
         {
             currentPage++;
             Renderer rend = plane.GetComponent<Renderer>();
-            rend.material.mainTexture = Resources.Load("3/" + currentPage.ToString()) as Texture;
+            rend.material.mainTexture = Resources.Load(planetNumber.ToString() + "/" + currentPage.ToString()) as Texture;
             checkCompleteOrStartButton();
         }
     }
@@ -62,7 +69,7 @@ public class LoadInfography : MonoBehaviour
         {
             currentPage--;
             Renderer rend = plane.GetComponent<Renderer>();
-            rend.material.mainTexture = Resources.Load("3/" + currentPage.ToString()) as Texture;
+            rend.material.mainTexture = Resources.Load(planetNumber.ToString() + "/" + currentPage.ToString()) as Texture;
             checkCompleteOrStartButton();
         }
     }
