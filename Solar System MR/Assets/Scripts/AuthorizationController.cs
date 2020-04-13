@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AuthorizationController : MonoBehaviour
@@ -68,5 +69,11 @@ public class AuthorizationController : MonoBehaviour
     public static string changeStringToAsterics(string str)
     {
         return new string('*', str.Length);
+    }
+
+    public void LoginWithoutAuthorization()
+    {
+        PlayerPrefs.SetInt("isAuthorized", 0);
+        SceneManager.LoadScene("UniverseView");
     }
 }
