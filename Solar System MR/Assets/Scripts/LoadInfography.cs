@@ -38,7 +38,7 @@ public class LoadInfography : MonoBehaviour
         rend.material.mainTexture = Resources.Load(planetNumber.ToString() + "/" + currentPage.ToString()) as Texture;
 
         //Load user progress
-        currentProgress = PlayerPrefs.GetString("planetProgress3");
+        currentProgress = PlayerPrefs.GetString("planetProgress" + planetNumber.ToString());
         if (currentProgress == "")
         {
             currentProgress = "0000";
@@ -81,7 +81,7 @@ public class LoadInfography : MonoBehaviour
         {
             charArray[currentPage - 1] = '1';
             currentProgress = new string(charArray);
-            PlayerPrefs.SetString("planetProgress3", currentProgress);
+            PlayerPrefs.SetString("planetProgress" + planetNumber.ToString(), currentProgress);
         }
         Debug.Log(currentProgress + " = is current Progress. Page number is " + currentPage.ToString());
         checkCompleteOrStartButton();
@@ -89,7 +89,7 @@ public class LoadInfography : MonoBehaviour
 
     public void ClearProgress()
     {
-        PlayerPrefs.SetString("planetProgress3", "0000");
+        PlayerPrefs.SetString("planetProgress" + planetNumber.ToString(), "0000");
         currentProgress = "0000";
         checkCompleteOrStartButton();
     }

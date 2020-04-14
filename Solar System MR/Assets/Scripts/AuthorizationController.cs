@@ -97,7 +97,7 @@ public class AuthorizationController : MonoBehaviour
                 PlayerPrefs.SetInt("planetNumber", answerWWW.last_scene);
                 for (int i=0; i<10; i++)
                 {
-                    PlayerPrefs.SetString("planetProgress"+i, answerWWW.planetProgress[i]);
+                    PlayerPrefs.SetString("planetProgress"+ i.ToString(), answerWWW.planetProgress[i]);
                 }
                
                 if (answerWWW.last_scene == 10)
