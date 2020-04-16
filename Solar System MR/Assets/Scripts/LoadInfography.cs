@@ -17,6 +17,13 @@ public class LoadInfography : MonoBehaviour
     [SerializeField]
     private GameObject startButton;
 
+    [SerializeField]
+    private string saveLastSceneURL = "http://localhost/saveLastScene.php";
+    [SerializeField]
+    private string saveProgressURL = "http://localhost/saveProgress.php";
+    Dictionary<int, string> pageId = new Dictionary<int, string>();
+    private bool isAuthorized;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +51,16 @@ public class LoadInfography : MonoBehaviour
             currentProgress = "0000";
         }
         checkCompleteOrStartButton();
+
+        isAuthorized = PlayerPrefs.GetInt("isAuthorized") == 1 ? true : false;
+        if (isAuthorized)
+        {
+            //save scene to DB
+            WWWForm form = new WWWForm();
+            form.AddField("userId", PlayerPrefs.GetInt("id_user"));
+            form.AddField("sceneId", planetNumber);
+            WWW www = new WWW(saveLastSceneURL, form);
+        }
     }
 
     // Update is called once per frame
@@ -83,8 +100,17 @@ public class LoadInfography : MonoBehaviour
             currentProgress = new string(charArray);
             PlayerPrefs.SetString("planetProgress" + planetNumber.ToString(), currentProgress);
         }
-        Debug.Log(currentProgress + " = is current Progress. Page number is " + currentPage.ToString());
         checkCompleteOrStartButton();
+
+        if (isAuthorized)
+        {
+            //save progress to DB
+            WWWForm form = new WWWForm();
+            form.AddField("userId", PlayerPrefs.GetInt("id_user"));
+            form.AddField("sceneId", planetNumber);
+            form.AddField("pageId", pageId[currentPage - 1]);
+            WWW www = new WWW(saveProgressURL, form);
+        }
     }
 
     public void ClearProgress()
