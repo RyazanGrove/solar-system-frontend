@@ -13,6 +13,7 @@ public class ExperimentController : MonoBehaviour
     [SerializeField]
     private GameObject asteroidPrefab4;
     [SerializeField]
+    [Range(0,20)]
     private int numberOfCopies;
     [SerializeField]
     private GameObject asteroidMainPrefab;
@@ -35,6 +36,7 @@ public class ExperimentController : MonoBehaviour
     private GameObject asteroid3;
     private GameObject asteroid4;
     private GameObject asteroidMain;
+    public GameObject[] asteroidArray;
 
     private Rigidbody rigidBodyAsteroid1;
     private Rigidbody rigidBodyAsteroid2;
@@ -85,17 +87,22 @@ public class ExperimentController : MonoBehaviour
 
     private void SpawnAsteroids()
     {
+        asteroidArray = new GameObject[numberOfCopies * 4];
         for (int i = 0; i < numberOfCopies; i++)
         {
             //spawn objects
             Vector3 asteroidPosition1 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2));
             asteroid1 = Instantiate(asteroidPrefab1, asteroidPosition1, Quaternion.identity);
+            asteroidArray[4 * i] = asteroid1;
             Vector3 asteroidPosition2 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2));
             asteroid2 = Instantiate(asteroidPrefab2, asteroidPosition2, Quaternion.identity);
+            asteroidArray[4 * i + 1] = asteroid2;
             Vector3 asteroidPosition3 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2));
             asteroid3 = Instantiate(asteroidPrefab3, asteroidPosition3, Quaternion.identity);
+            asteroidArray[4 * i + 2] = asteroid3;
             Vector3 asteroidPosition4 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2));
             asteroid4 = Instantiate(asteroidPrefab4, asteroidPosition4, Quaternion.identity);
+            asteroidArray[4 * i + 3] = asteroid4;
 
             //add rigidbogy to spawn objects
             rigidBodyAsteroid1 = asteroid1.AddComponent<Rigidbody>();
@@ -174,6 +181,7 @@ public class ExperimentController : MonoBehaviour
     {
         MakeEarthVisisble();
         SpawnAsteroidMain();
+        DestroyAsteroids();
         asteroidIsMoving = false;
     }
 
@@ -190,6 +198,17 @@ public class ExperimentController : MonoBehaviour
         else
         {
             Debug.LogWarning("ExplosionEffectPrefab field is not assigned on object " + gameObject.name);
+        }
+    }
+
+    private void DestroyAsteroids()
+    {
+        if (asteroidArray != null)
+        {
+            for (int i = 0; i < numberOfCopies * 4; i++)
+            {
+                Destroy(asteroidArray[i]);
+            }
         }
     }
 }
