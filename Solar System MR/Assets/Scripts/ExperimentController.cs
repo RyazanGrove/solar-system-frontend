@@ -30,6 +30,17 @@ public class ExperimentController : MonoBehaviour
     [SerializeField]
     [Range(0.1f,1f)]
     private float asteroidMainColliderRadious;
+    [SerializeField]
+    [Range(0.1f,2f)]
+    private float asteroidSpeed;
+    [SerializeField]
+    [Range(0.1f, 0.5f)]
+    private float speedUnit;
+
+    [SerializeField]
+    private Vector3 asteroidSize;
+    [SerializeField]
+    private Vector3 sizeUnit;
 
     private GameObject asteroid1;
     private GameObject asteroid2;
@@ -61,6 +72,11 @@ public class ExperimentController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        asteroidSpeed = 0.5f;
+        speedUnit = 0.25f;
+        sizeUnit = new Vector3(0.05f, 0.05f, 0.05f);
+        asteroidSize = Vector3.one;
+
         asteroidIsMoving = false;
         asteroidHasNotExploded = true;
         SpawnEarth();
@@ -81,6 +97,22 @@ public class ExperimentController : MonoBehaviour
         if (Input.GetKey(KeyCode.R))
         {
             ResetExperement();
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            IncreaseAsteroidSpeed();
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            DecreaseAsteroidSpeed();
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            IncreaseAsteroidSize();
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            DecreaseAsteroidSize();
         }
     }
 
@@ -140,6 +172,7 @@ public class ExperimentController : MonoBehaviour
         }
         //add necessary scripts for collision
         asteroidMain = Instantiate(asteroidMainPrefab, asteroidMainPosition, Quaternion.identity);
+        asteroidMain.transform.localScale = asteroidSize;
         Rigidbody asteroidMainRigidBody = asteroidMain.AddComponent<Rigidbody>();
         asteroidMainRigidBody.useGravity = false;
         SphereCollider asteroidMainSphereCollider = asteroidMain.AddComponent<SphereCollider>();
@@ -150,12 +183,15 @@ public class ExperimentController : MonoBehaviour
         asteroidHasNotExploded = true;
         asteroidMainPositionCurrent = asteroidMainPosition;
     }
-
+    public void StartAsteroidMovement()
+    {
+        asteroidIsMoving = true;
+    }
     private void AsteroidMovement()
     {
 
         Vector3 direction = centerOfPlanet - asteroidMainPositionCurrent;
-        asteroidMain.transform.Translate(direction * Time.deltaTime);
+        asteroidMain.transform.Translate(direction * asteroidSpeed * Time.deltaTime);
     }
 
     public void TriggerExplosion()
@@ -203,12 +239,50 @@ public class ExperimentController : MonoBehaviour
 
     private void DestroyAsteroids()
     {
-        if (asteroidArray != null)
+        if (asteroidArray != null && asteroidArray.Length > 1)
         {
             for (int i = 0; i < numberOfCopies * 4; i++)
             {
                 Destroy(asteroidArray[i]);
             }
+        }
+    }
+
+    public void IncreaseAsteroidSpeed()
+    {
+        asteroidSpeed += speedUnit;
+        if(asteroidSpeed > 2f)
+        {
+            asteroidSpeed = 2f;
+        }
+    }
+
+    public void DecreaseAsteroidSpeed()
+    {
+        asteroidSpeed -= speedUnit;
+        if (asteroidSpeed < 0.1f)
+        {
+            asteroidSpeed = 0.1f;
+        }
+    }
+
+    public void IncreaseAsteroidSize()
+    {
+        Vector3 tempSize = asteroidMain.transform.localScale + sizeUnit;
+        if(tempSize.x < 2f && tempSize.y < 2f && tempSize.z < 2f)
+        {
+            asteroidSize += sizeUnit;
+            asteroidMain.transform.localScale = asteroidSize;
+        }
+    }
+
+    public void DecreaseAsteroidSize()
+    {
+        Vector3 tempSize = asteroidMain.transform.localScale - sizeUnit;
+        if (tempSize.x > 0.1f && tempSize.y > 0.1f && tempSize.z > 0.1f)
+        {
+            asteroidSize -= sizeUnit;
+            asteroidMain.transform.localScale = asteroidSize;
         }
     }
 }
