@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6231380922297361369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6231380922297361375}
+  - component: {fileID: 6231380922297361368}
+  - component: {fileID: 5667372997386093075}
+  m_Layer: 0
+  m_Name: ExperimentControl
+  m_TagString: ExperimentControl
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6231380922297361375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6231380922297361369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6231380922297361368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6231380922297361369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc31614d888d9e43b31cca26d176fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidPrefab1: {fileID: 908163745347899366, guid: bde1ab7fa3b2ed94794e6987c794fec3,
+    type: 3}
+  asteroidPrefab2: {fileID: 4608180891253580920, guid: e5e9584d7e5d33748a2807559bf11b5a,
+    type: 3}
+  asteroidPrefab3: {fileID: 4166347708974224327, guid: eb281e943f2077245ae0f14804dfd00f,
+    type: 3}
+  asteroidPrefab4: {fileID: 1584564019430487386, guid: 415014f9b2f8a824fbc3ba98dce17964,
+    type: 3}
+  numberOfCopies: 10
+  asteroidMainPrefab: {fileID: 994366902549286697, guid: bd6b15b8ad7d2a94ab0934445cf5ac24,
+    type: 3}
+  centerOfPlanet: {x: 0, y: 0, z: 0}
+  sphereSpawnRadius: 1
+  asteroidMainPosition: {x: -2, y: 2, z: -2}
+  asteroidMainColliderRadious: 0.25
+  asteroidSpeed: 0.5
+  speedUnit: 0.25
+  asteroidSize: {x: 1, y: 1, z: 1}
+  sizeUnit: {x: 0.05, y: 0.05, z: 0.05}
+  asteroidArray: []
+  explosionForce: 100
+  planetPrefab: {fileID: 5630877428405641727, guid: 925d0c4092a861c43bb6e2d50970c564,
+    type: 3}
+  ExplosionEffectPrefab: {fileID: 4426177635491884488, guid: b126e21ed14192b4cbf96beb29b4c016,
+    type: 3}
+--- !u!114 &5667372997386093075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6231380922297361369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8258ea15b8f74c4889ce485d21cbbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 0
+    i1: 0
+    i2: 0
+    i3: 0
+    i4: 0
+    i5: 0
+    i6: 0
+    i7: 0
+    i8: 0
+    i9: 0
+    i10: 0
+    i11: 0
+    i12: 0
+    i13: 0
+    i14: 0
+    i15: 0
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0

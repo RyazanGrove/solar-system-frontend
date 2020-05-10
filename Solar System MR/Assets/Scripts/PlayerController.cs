@@ -12,8 +12,6 @@ public class PlayerController : NetworkBehaviour
 
     private ExperimentController experimentController;
 
-    // Start is called before the first frame update
-
     public void IncreaseAsteroidSize()
     {
         CmdIncreaseAsteroidSize();
@@ -24,14 +22,14 @@ public class PlayerController : NetworkBehaviour
     {
         RpcIncreaseAsteroidSize();
     }
-
+    
     [ClientRpc]
     public void RpcIncreaseAsteroidSize()
     {
         experimentController.IncreaseAsteroidSize();
     }
 
-    
+
     public void DecreaseAsteroidSize()
     {
         CmdDecreaseAsteroidSize();
@@ -49,14 +47,12 @@ public class PlayerController : NetworkBehaviour
         experimentController.DecreaseAsteroidSize();
     }
 
-
-
     void Start()
     {
+        experimentController = GameObject.FindGameObjectWithTag("ExperimentControl").GetComponent<ExperimentController>();
+
         if (isLocalPlayer)
         {
-            experimentController = GameObject.FindGameObjectWithTag("ExperimentControl").GetComponent<ExperimentController>();
-
             increaseButton = GameObject.FindGameObjectWithTag("IncreaseAsteroidSizeButton").GetComponent<Button>();
             increaseButton.onClick.AddListener(() => { IncreaseAsteroidSize(); });
             decreaseButton = GameObject.FindGameObjectWithTag("DecreaseAsteroidSizeButton").GetComponent<Button>();

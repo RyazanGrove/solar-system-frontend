@@ -9,21 +9,16 @@ public class NetworkController : NetworkBehaviour
     [SerializeField]
     private string networkAddress;
 
-    [SerializeField]
-    private Button changeScaleButton;
-
     NetworkManager networkManager;
 
     void Start()
     {
         networkManager = GetComponent<NetworkManager>();
-        Debug.Log(networkManager.networkAddress);
-        Debug.Log(networkManager.networkPort);
 
         if (networkAddress.Equals("") || networkAddress.Equals("localhost"))
         {
             StartHost();
-        } 
+        }
         else
         {
             networkManager.networkAddress = networkAddress;
@@ -33,7 +28,25 @@ public class NetworkController : NetworkBehaviour
     public void StartHost()
     {
         Debug.Log("Starting host");
-        networkManager.StartHost(); 
+        networkManager.StartHost();
+        if (networkManager.spawnPrefabs.Count > 0)
+        {
+
+            if (networkManager.spawnPrefabs[0] != null)
+            {
+                GameObject experementGUIControl = Instantiate(networkManager.spawnPrefabs[0]);
+                NetworkServer.Spawn(experementGUIControl);
+            }
+            else
+            {
+                Debug.LogWarning("NetworkController can't find controlPanel prefab in spawnPrefabs on " + gameObject.name);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("NetworkController can't find controlPanel prefab in spawnPrefabs on " + gameObject.name);
+        }
+
         Debug.Log("Started host on " + networkManager.networkAddress + " and port " + networkManager.networkPort);
     }
     public void StartClient()
@@ -41,6 +54,7 @@ public class NetworkController : NetworkBehaviour
         Debug.Log("Starting client");
         //TODO: make good check for connection of client
         NetworkClient client = networkManager.StartClient();
+
         if (client != null)
         {
             Debug.Log("Started client on " + networkManager.networkAddress + " and port " + networkManager.networkPort);
