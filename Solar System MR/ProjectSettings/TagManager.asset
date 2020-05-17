@@ -11,6 +11,7 @@ TagManager:
   - NetworkManager
   - IncreaseAsteroidSpeedButton
   - DecreaseAsteroidSpeedButton
+  - AsteroidSizeSliderPin
   layers:
   - Default
   - TransparentFX

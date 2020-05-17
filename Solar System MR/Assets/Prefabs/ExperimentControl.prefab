@@ -69,6 +69,10 @@ MonoBehaviour:
     type: 3}
   ExplosionEffectPrefab: {fileID: 4426177635491884488, guid: b126e21ed14192b4cbf96beb29b4c016,
     type: 3}
+  maxNumberOfSliderBackground: 60
+  numberOfUnitsInSlider: 20
+  numberOfPixelsInOneUnit: 0
+  increaseAsteroidSizePin: {fileID: 0}
 --- !u!114 &5667372997386093075
 MonoBehaviour:
   m_ObjectHideFlags: 0
