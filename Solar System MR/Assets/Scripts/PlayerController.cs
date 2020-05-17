@@ -11,6 +11,10 @@ public class PlayerController : NetworkBehaviour
     private Button decreaseSizeButton;
     private Button increaseSpeedButton;
     private Button decreaseSpeedButton;
+    private Button submitAnswerButton;
+    private Button tryAgainButton;
+
+    private GameObject tryAgainButtonObject;
 
     private ExperimentController experimentController;
 
@@ -84,6 +88,41 @@ public class PlayerController : NetworkBehaviour
         experimentController.DecreaseAsteroidSpeed();
     }
 
+    //sumbit/repeat
+    public void SubmitAnswer()
+    {
+        CmdSubmitAnswer();
+    }
+
+    [Command]
+    public void CmdSubmitAnswer()
+    {
+        RpcSubmitAnswer();
+    }
+
+    [ClientRpc]
+    public void RpcSubmitAnswer()
+    {
+        experimentController.StartAsteroidMovement();
+    }
+
+    public void ResetExperement()
+    {
+        CmdResetExperement();
+    }
+
+    [Command]
+    public void CmdResetExperement()
+    {
+        RpcResetExperement();
+    }
+
+    [ClientRpc]
+    public void RpcResetExperement()
+    {
+        experimentController.ResetExperement();
+    }
+
     void Start()
     {
         experimentController = GameObject.FindGameObjectWithTag("ExperimentControl").GetComponent<ExperimentController>();
@@ -98,12 +137,22 @@ public class PlayerController : NetworkBehaviour
             increaseSpeedButton.onClick.AddListener(() => { IncreaseAsteroidSpeed(); });
             decreaseSpeedButton = GameObject.FindGameObjectWithTag("DecreaseAsteroidSpeedButton").GetComponent<Button>();
             decreaseSpeedButton.onClick.AddListener(() => { DecreaseAsteroidSpeed(); });
+            //change Image and Interactible
+            submitAnswerButton = GameObject.FindGameObjectWithTag("SubmitAnswerButton").GetComponent<Button>();
+            submitAnswerButton.onClick.AddListener(() => { SubmitAnswer(); });
+            tryAgainButtonObject = GameObject.FindGameObjectWithTag("TryAgainButton");
+            tryAgainButton = tryAgainButtonObject.GetComponent<Button>();
+            tryAgainButton.onClick.AddListener(() => { ResetExperement(); });
+            tryAgainButton.interactable = false;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(experimentController.getUsersAnswer() != 0)
+        {
+            tryAgainButton.interactable = true;
+        }
     }
 }

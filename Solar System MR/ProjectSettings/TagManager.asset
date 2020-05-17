@@ -13,6 +13,8 @@ TagManager:
   - DecreaseAsteroidSpeedButton
   - AsteroidSizeSliderPin
   - AsteroidSpeedSliderPin
+  - SubmitAnswerButton
+  - TryAgainButton
   layers:
   - Default
   - TransparentFX

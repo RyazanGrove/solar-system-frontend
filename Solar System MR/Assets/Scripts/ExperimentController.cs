@@ -20,7 +20,7 @@ public class ExperimentController : MonoBehaviour
 
     [SerializeField]
     private Vector3 centerOfPlanet;
-    //public Vector3 size;
+
     [SerializeField]
     private float sphereSpawnRadius = 1f;
     [SerializeField]
@@ -84,6 +84,8 @@ public class ExperimentController : MonoBehaviour
     private GameObject asteroidSpeedPin;
     private int currentAsteroidSpeedPinUnit;
 
+    private int usersAnswer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -108,6 +110,8 @@ public class ExperimentController : MonoBehaviour
         asteroidSizePin = GameObject.FindGameObjectWithTag("AsteroidSizeSliderPin");
         currentAsteroidSpeedPinUnit = 1;
         asteroidSpeedPin = GameObject.FindGameObjectWithTag("AsteroidSpeedSliderPin");
+
+        usersAnswer = 0;
     }
 
     // Update is called once per frame
@@ -223,9 +227,34 @@ public class ExperimentController : MonoBehaviour
 
     public void TriggerExplosion()
     {
-        SpawnAsteroids();
-        asteroidMain.SetActive(false);
-        asteroidHasNotExploded = false;
+        //check
+        Debug.Log(currentAsteroidSizePinUnit);
+        Debug.Log(currentAsteroidSpeedPinUnit);
+        if (currentAsteroidSizePinUnit == 11 && currentAsteroidSpeedPinUnit == 2)
+        {
+            SpawnAsteroids();
+            asteroidMain.SetActive(false);
+            asteroidHasNotExploded = false;
+            usersAnswer = 1;
+            //Send data. Or send data in special component
+        }
+        else
+        {
+            if(currentAsteroidSizePinUnit * currentAsteroidSpeedPinUnit < 22)
+            {
+                asteroidMain.SetActive(false);
+                asteroidHasNotExploded = false;
+                usersAnswer = 2;
+            }
+            else
+            {
+                SpawnAsteroids();
+                asteroidMain.SetActive(false);
+                asteroidHasNotExploded = false;
+                usersAnswer = 3;
+            }
+        }
+
     }
 
     private void MakeEarthVisisble()
@@ -387,5 +416,15 @@ public class ExperimentController : MonoBehaviour
         {
             Debug.Log("asteroidSizePin is empty on " + gameObject.name + ". There is no game object with tag \"AsteroidSpeedSliderPin\" ");
         }
+    }
+
+    public int getUsersAnswer()
+    {
+        return usersAnswer;
+    }
+
+    public void setUsersAnswer(int zero)
+    {
+        usersAnswer = zero;
     }
 }
