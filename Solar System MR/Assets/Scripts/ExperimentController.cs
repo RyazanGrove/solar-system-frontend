@@ -77,8 +77,12 @@ public class ExperimentController : MonoBehaviour
     public float numberOfPixelsInOneUnit;
 
     [SerializeField]
-    private GameObject increaseAsteroidSizePin;
-    private int currentIncreaseAsteroidSizePinUnit;
+    private GameObject asteroidSizePin;
+    private int currentAsteroidSizePinUnit;
+
+    [SerializeField]
+    private GameObject asteroidSpeedPin;
+    private int currentAsteroidSpeedPinUnit;
 
 
     // Start is called before the first frame update
@@ -100,8 +104,10 @@ public class ExperimentController : MonoBehaviour
             numberOfUnitsInSlider = 1;
         }
         numberOfPixelsInOneUnit = maxNumberOfSliderBackground / numberOfUnitsInSlider;
-        currentIncreaseAsteroidSizePinUnit = 1;
-        increaseAsteroidSizePin = GameObject.FindGameObjectWithTag("AsteroidSizeSliderPin");
+        currentAsteroidSizePinUnit = 1;
+        asteroidSizePin = GameObject.FindGameObjectWithTag("AsteroidSizeSliderPin");
+        currentAsteroidSpeedPinUnit = 1;
+        asteroidSpeedPin = GameObject.FindGameObjectWithTag("AsteroidSpeedSliderPin");
     }
 
     // Update is called once per frame
@@ -276,6 +282,10 @@ public class ExperimentController : MonoBehaviour
         {
             asteroidSpeed = 2f;
         }
+        else
+        {
+            IncreaseAsteroidSpeedOnSlider();
+        }
     }
 
     public void DecreaseAsteroidSpeed()
@@ -284,6 +294,10 @@ public class ExperimentController : MonoBehaviour
         if (asteroidSpeed < 0.1f)
         {
             asteroidSpeed = 0.1f;
+        }
+        else
+        {
+            DecreaseAsteroidSpeedOnSlider();
         }
     }
 
@@ -313,33 +327,65 @@ public class ExperimentController : MonoBehaviour
 
     public void IncreaseAsteroidSizeOnSlider()
     {
-        if(increaseAsteroidSizePin != null)
+        if(asteroidSizePin != null)
         {
-            if(currentIncreaseAsteroidSizePinUnit < numberOfUnitsInSlider)
+            if(currentAsteroidSizePinUnit < numberOfUnitsInSlider)
             {
-                increaseAsteroidSizePin.transform.Translate(Vector3.up * numberOfPixelsInOneUnit * 0.1f);
-                currentIncreaseAsteroidSizePinUnit++;
+                asteroidSizePin.transform.Translate(Vector3.up * numberOfPixelsInOneUnit * 0.1f);
+                currentAsteroidSizePinUnit++;
             }
         }
         else
         {
-            Debug.Log("increaseAsteroidSizePin is empty on " + gameObject.name + ". There is no game object with tag \"AsteroidSizeSliderPin\" ");
+            Debug.Log("asteroidSizePin is empty on " + gameObject.name + ". There is no game object with tag \"AsteroidSizeSliderPin\" ");
         }
     }
 
     public void DecreaseAsteroidSizeOnSlider()
     {
-        if (increaseAsteroidSizePin != null)
+        if (asteroidSizePin != null)
         {
-            if (currentIncreaseAsteroidSizePinUnit > 1)
+            if (currentAsteroidSizePinUnit > 1)
             {
-                increaseAsteroidSizePin.transform.Translate(Vector3.up * - numberOfPixelsInOneUnit * 0.1f);
-                currentIncreaseAsteroidSizePinUnit--;
+                asteroidSizePin.transform.Translate(Vector3.up * - numberOfPixelsInOneUnit * 0.1f);
+                currentAsteroidSizePinUnit--;
             }
         }
         else
         {
-            Debug.Log("increaseAsteroidSizePin is empty on " + gameObject.name + ". There is no game object with tag \"AsteroidSizeSliderPin\" ");
+            Debug.Log("asteroidSizePin is empty on " + gameObject.name + ". There is no game object with tag \"AsteroidSizeSliderPin\" ");
+        }
+    }
+
+    public void IncreaseAsteroidSpeedOnSlider()
+    {
+        if (asteroidSizePin != null)
+        {
+            if (currentAsteroidSpeedPinUnit < numberOfUnitsInSlider)
+            {
+                asteroidSpeedPin.transform.Translate(Vector3.up * numberOfPixelsInOneUnit * 0.1f);
+                currentAsteroidSpeedPinUnit++;
+            }
+        }
+        else
+        {
+            Debug.Log("asteroidSpeedPin is empty on " + gameObject.name + ". There is no game object with tag \"AsteroidSpeedSliderPin\" ");
+        }
+    }
+
+    public void DecreaseAsteroidSpeedOnSlider()
+    {
+        if (asteroidSpeedPin != null)
+        {
+            if (currentAsteroidSpeedPinUnit > 1)
+            {
+                asteroidSpeedPin.transform.Translate(Vector3.up * -numberOfPixelsInOneUnit * 0.1f);
+                currentAsteroidSpeedPinUnit--;
+            }
+        }
+        else
+        {
+            Debug.Log("asteroidSizePin is empty on " + gameObject.name + ". There is no game object with tag \"AsteroidSpeedSliderPin\" ");
         }
     }
 }
