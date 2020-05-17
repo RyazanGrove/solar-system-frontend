@@ -9,6 +9,8 @@ TagManager:
   - ControlPanel
   - ExperimentControl
   - NetworkManager
+  - IncreaseAsteroidSpeedButton
+  - DecreaseAsteroidSpeedButton
   layers:
   - Default
   - TransparentFX

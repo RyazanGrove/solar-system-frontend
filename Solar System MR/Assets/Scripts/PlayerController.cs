@@ -7,11 +7,14 @@ using UnityEngine.UI;
 
 public class PlayerController : NetworkBehaviour
 {
-    private Button increaseButton;
-    private Button decreaseButton;
+    private Button increaseSizeButton;
+    private Button decreaseSizeButton;
+    private Button increaseSpeedButton;
+    private Button decreaseSpeedButton;
 
     private ExperimentController experimentController;
 
+    //size
     public void IncreaseAsteroidSize()
     {
         CmdIncreaseAsteroidSize();
@@ -28,7 +31,6 @@ public class PlayerController : NetworkBehaviour
     {
         experimentController.IncreaseAsteroidSize();
     }
-
 
     public void DecreaseAsteroidSize()
     {
@@ -47,16 +49,55 @@ public class PlayerController : NetworkBehaviour
         experimentController.DecreaseAsteroidSize();
     }
 
+    //speed
+    public void IncreaseAsteroidSpeed()
+    {
+        CmdIncreaseAsteroidSpeed();
+    }
+
+    [Command]
+    public void CmdIncreaseAsteroidSpeed()
+    {
+        RpcIncreaseAsteroidSpeed();
+    }
+
+    [ClientRpc]
+    public void RpcIncreaseAsteroidSpeed()
+    {
+        experimentController.IncreaseAsteroidSpeed();
+    }
+
+    public void DecreaseAsteroidSpeed()
+    {
+        CmdDecreaseAsteroidSpeed();
+    }
+
+    [Command]
+    public void CmdDecreaseAsteroidSpeed()
+    {
+        RpcDecreaseAsteroidSpeed();
+    }
+
+    [ClientRpc]
+    public void RpcDecreaseAsteroidSpeed()
+    {
+        experimentController.DecreaseAsteroidSpeed();
+    }
+
     void Start()
     {
         experimentController = GameObject.FindGameObjectWithTag("ExperimentControl").GetComponent<ExperimentController>();
 
         if (isLocalPlayer)
         {
-            increaseButton = GameObject.FindGameObjectWithTag("IncreaseAsteroidSizeButton").GetComponent<Button>();
-            increaseButton.onClick.AddListener(() => { IncreaseAsteroidSize(); });
-            decreaseButton = GameObject.FindGameObjectWithTag("DecreaseAsteroidSizeButton").GetComponent<Button>();
-            decreaseButton.onClick.AddListener(() => { DecreaseAsteroidSize(); });
+            increaseSizeButton = GameObject.FindGameObjectWithTag("IncreaseAsteroidSizeButton").GetComponent<Button>();
+            increaseSizeButton.onClick.AddListener(() => { IncreaseAsteroidSize(); });
+            decreaseSizeButton = GameObject.FindGameObjectWithTag("DecreaseAsteroidSizeButton").GetComponent<Button>();
+            decreaseSizeButton.onClick.AddListener(() => { DecreaseAsteroidSize(); });
+            increaseSpeedButton = GameObject.FindGameObjectWithTag("IncreaseAsteroidSpeedButton").GetComponent<Button>();
+            increaseSpeedButton.onClick.AddListener(() => { IncreaseAsteroidSpeed(); });
+            decreaseSpeedButton = GameObject.FindGameObjectWithTag("DecreaseAsteroidSpeedButton").GetComponent<Button>();
+            decreaseSpeedButton.onClick.AddListener(() => { DecreaseAsteroidSpeed(); });
         }
     }
 
