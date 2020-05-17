@@ -227,9 +227,7 @@ public class ExperimentController : MonoBehaviour
 
     public void TriggerExplosion()
     {
-        //check
-        Debug.Log(currentAsteroidSizePinUnit);
-        Debug.Log(currentAsteroidSpeedPinUnit);
+        //check correct answer
         if (currentAsteroidSizePinUnit == 11 && currentAsteroidSpeedPinUnit == 2)
         {
             SpawnAsteroids();

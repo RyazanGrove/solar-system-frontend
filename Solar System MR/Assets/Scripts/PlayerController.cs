@@ -15,6 +15,7 @@ public class PlayerController : NetworkBehaviour
     private Button tryAgainButton;
 
     private GameObject tryAgainButtonObject;
+    private GameObject submitAnswerButtonObject;
 
     private ExperimentController experimentController;
 
@@ -103,6 +104,8 @@ public class PlayerController : NetworkBehaviour
     [ClientRpc]
     public void RpcSubmitAnswer()
     {
+        submitAnswerButton.interactable = false;
+        submitAnswerButton.GetComponent<Image>().enabled = false;
         experimentController.StartAsteroidMovement();
     }
 
@@ -120,6 +123,10 @@ public class PlayerController : NetworkBehaviour
     [ClientRpc]
     public void RpcResetExperement()
     {
+        submitAnswerButton.interactable = true;
+        submitAnswerButton.GetComponent<Image>().enabled = true;
+        tryAgainButton.interactable = false;
+        tryAgainButton.GetComponent<Image>().enabled = false;
         experimentController.ResetExperement();
     }
 
@@ -138,12 +145,15 @@ public class PlayerController : NetworkBehaviour
             decreaseSpeedButton = GameObject.FindGameObjectWithTag("DecreaseAsteroidSpeedButton").GetComponent<Button>();
             decreaseSpeedButton.onClick.AddListener(() => { DecreaseAsteroidSpeed(); });
             //change Image and Interactible
-            submitAnswerButton = GameObject.FindGameObjectWithTag("SubmitAnswerButton").GetComponent<Button>();
+            submitAnswerButtonObject = GameObject.FindGameObjectWithTag("SubmitAnswerButton");
+            submitAnswerButton = submitAnswerButtonObject.GetComponent<Button>();
             submitAnswerButton.onClick.AddListener(() => { SubmitAnswer(); });
+
             tryAgainButtonObject = GameObject.FindGameObjectWithTag("TryAgainButton");
             tryAgainButton = tryAgainButtonObject.GetComponent<Button>();
             tryAgainButton.onClick.AddListener(() => { ResetExperement(); });
             tryAgainButton.interactable = false;
+            tryAgainButton.GetComponent<Image>().enabled = false;
         }
     }
 
@@ -153,6 +163,8 @@ public class PlayerController : NetworkBehaviour
         if(experimentController.getUsersAnswer() != 0)
         {
             tryAgainButton.interactable = true;
+            tryAgainButton.GetComponent<Image>().enabled = true;
+            experimentController.setUsersAnswer(0);
         }
     }
 }
