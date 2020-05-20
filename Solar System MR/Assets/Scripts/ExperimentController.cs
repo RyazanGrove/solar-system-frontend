@@ -69,12 +69,12 @@ public class ExperimentController : MonoBehaviour
     private bool asteroidHasNotExploded;
 
     [SerializeField]
-    private int maxNumberOfSliderBackground;
+    [Range(0f, 1f)]
+    private float numberOfPixelsToMoveOneUnit;
 
     [SerializeField]
     [Range(1,20)]
     private int numberOfUnitsInSlider;
-    public float numberOfPixelsInOneUnit;
 
     [SerializeField]
     private GameObject asteroidSizePin;
@@ -96,11 +96,6 @@ public class ExperimentController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        asteroidSpeed = 0.5f;
-        speedUnit = 0.25f;
-        sizeUnit = new Vector3(0.05f, 0.05f, 0.05f);
-        asteroidSize = Vector3.one;
-
         asteroidIsMoving = false;
         asteroidHasNotExploded = true;
         SpawnEarth();
@@ -111,10 +106,9 @@ public class ExperimentController : MonoBehaviour
         {
             numberOfUnitsInSlider = 1;
         }
-        numberOfPixelsInOneUnit = maxNumberOfSliderBackground / numberOfUnitsInSlider;
-        currentAsteroidSizePinUnit = 1;
+        currentAsteroidSizePinUnit = 10;
         asteroidSizePin = GameObject.FindGameObjectWithTag("AsteroidSizeSliderPin");
-        currentAsteroidSpeedPinUnit = 1;
+        currentAsteroidSpeedPinUnit = 10;
         asteroidSpeedPin = GameObject.FindGameObjectWithTag("AsteroidSpeedSliderPin");
 
         //size text
@@ -333,7 +327,7 @@ public class ExperimentController : MonoBehaviour
     public void IncreaseAsteroidSpeed()
     {
         asteroidSpeed += speedUnit;
-        if(asteroidSpeed > 2f)
+        if(asteroidSpeed > 2.01f)
         {
             asteroidSpeed = 2f;
         }
@@ -346,7 +340,7 @@ public class ExperimentController : MonoBehaviour
     public void DecreaseAsteroidSpeed()
     {
         asteroidSpeed -= speedUnit;
-        if (asteroidSpeed < 0.1f)
+        if (asteroidSpeed < 0.09f)
         {
             asteroidSpeed = 0.1f;
         }
@@ -359,7 +353,7 @@ public class ExperimentController : MonoBehaviour
     public void IncreaseAsteroidSize()
     {
         Vector3 tempSize = asteroidMain.transform.localScale + sizeUnit;
-        if(tempSize.x < 2f && tempSize.y < 2f && tempSize.z < 2f)
+        if(tempSize.x < 2.01f && tempSize.y < 2.01f && tempSize.z < 2.01f)
         {
             asteroidSize += sizeUnit;
             asteroidMain.transform.localScale = asteroidSize;
@@ -371,7 +365,7 @@ public class ExperimentController : MonoBehaviour
     public void DecreaseAsteroidSize()
     {
         Vector3 tempSize = asteroidMain.transform.localScale - sizeUnit;
-        if (tempSize.x > 0.1f && tempSize.y > 0.1f && tempSize.z > 0.1f)
+        if (tempSize.x > 0.09f && tempSize.y > 0.09f && tempSize.z > 0.09f)
         {
             asteroidSize -= sizeUnit;
             asteroidMain.transform.localScale = asteroidSize;
@@ -384,10 +378,10 @@ public class ExperimentController : MonoBehaviour
     {
         if(asteroidSizePin != null)
         {
-            if(currentAsteroidSizePinUnit < numberOfUnitsInSlider)
+            if(currentAsteroidSizePinUnit <= numberOfUnitsInSlider)
             {
-                asteroidSizePin.transform.Translate(Vector3.up * numberOfPixelsInOneUnit * 0.1f);
                 currentAsteroidSizePinUnit++;
+                asteroidSizePin.transform.Translate(Vector3.up * numberOfPixelsToMoveOneUnit);
                 UpdateAsteroidSizeText();
             }
         }
@@ -403,8 +397,8 @@ public class ExperimentController : MonoBehaviour
         {
             if (currentAsteroidSizePinUnit > 1)
             {
-                asteroidSizePin.transform.Translate(Vector3.up * - numberOfPixelsInOneUnit * 0.1f);
                 currentAsteroidSizePinUnit--;
+                asteroidSizePin.transform.Translate(Vector3.up * - numberOfPixelsToMoveOneUnit);
                 UpdateAsteroidSizeText();
             }
         }
@@ -418,10 +412,10 @@ public class ExperimentController : MonoBehaviour
     {
         if (asteroidSizePin != null)
         {
-            if (currentAsteroidSpeedPinUnit < numberOfUnitsInSlider)
+            if (currentAsteroidSpeedPinUnit <= numberOfUnitsInSlider)
             {
-                asteroidSpeedPin.transform.Translate(Vector3.up * numberOfPixelsInOneUnit * 0.1f);
                 currentAsteroidSpeedPinUnit++;
+                asteroidSpeedPin.transform.Translate(Vector3.up * numberOfPixelsToMoveOneUnit);
                 UpdateAsteroidSpeedText();
             }
         }
@@ -437,8 +431,8 @@ public class ExperimentController : MonoBehaviour
         {
             if (currentAsteroidSpeedPinUnit > 1)
             {
-                asteroidSpeedPin.transform.Translate(Vector3.up * -numberOfPixelsInOneUnit * 0.1f);
                 currentAsteroidSpeedPinUnit--;
+                asteroidSpeedPin.transform.Translate(Vector3.up * -numberOfPixelsToMoveOneUnit);
                 UpdateAsteroidSpeedText();
             }
         }

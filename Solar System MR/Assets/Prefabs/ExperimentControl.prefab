@@ -59,20 +59,20 @@ MonoBehaviour:
   sphereSpawnRadius: 1
   asteroidMainPosition: {x: -2, y: 2, z: -2}
   asteroidMainColliderRadious: 0.25
-  asteroidSpeed: 0.5
-  speedUnit: 0.25
+  asteroidSpeed: 1
+  speedUnit: 0.1
   asteroidSize: {x: 1, y: 1, z: 1}
-  sizeUnit: {x: 0.05, y: 0.05, z: 0.05}
+  sizeUnit: {x: 0.1, y: 0.1, z: 0.1}
   asteroidArray: []
   explosionForce: 100
   planetPrefab: {fileID: 5630877428405641727, guid: 925d0c4092a861c43bb6e2d50970c564,
     type: 3}
   ExplosionEffectPrefab: {fileID: 4426177635491884488, guid: b126e21ed14192b4cbf96beb29b4c016,
     type: 3}
-  maxNumberOfSliderBackground: 60
+  numberOfPixelsToMoveOneUnit: 0.25
   numberOfUnitsInSlider: 20
-  numberOfPixelsInOneUnit: 0
-  increaseAsteroidSizePin: {fileID: 0}
+  asteroidSizePin: {fileID: 0}
+  asteroidSpeedPin: {fileID: 0}
 --- !u!114 &5667372997386093075
 MonoBehaviour:
   m_ObjectHideFlags: 0
