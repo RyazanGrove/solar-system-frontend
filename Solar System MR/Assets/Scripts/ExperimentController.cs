@@ -84,6 +84,12 @@ public class ExperimentController : MonoBehaviour
     private GameObject asteroidSpeedPin;
     private int currentAsteroidSpeedPinUnit;
 
+    private GameObject textObjectSize;
+    private TextMesh textMeshSize;
+
+    private GameObject textObjectSpeed;
+    private TextMesh textMeshSpeed;
+
     private int usersAnswer;
 
 
@@ -110,6 +116,28 @@ public class ExperimentController : MonoBehaviour
         asteroidSizePin = GameObject.FindGameObjectWithTag("AsteroidSizeSliderPin");
         currentAsteroidSpeedPinUnit = 1;
         asteroidSpeedPin = GameObject.FindGameObjectWithTag("AsteroidSpeedSliderPin");
+
+        //size text
+        textObjectSize = new GameObject();
+        textObjectSize.transform.parent = asteroidSizePin.transform;
+        textObjectSize.transform.position = asteroidSizePin.transform.position;
+        textObjectSize.transform.Translate(new Vector3(-0.9f, 0f, 0f));
+        textMeshSize = textObjectSize.AddComponent<TextMesh>();
+        textMeshSize.text = currentAsteroidSizePinUnit.ToString() + " км";
+        textMeshSize.anchor = TextAnchor.MiddleCenter;
+        textMeshSize.characterSize = 0.2f;
+        textMeshSize.fontSize = 18;
+
+        //speed text
+        textObjectSpeed = new GameObject();
+        textObjectSpeed.transform.parent = asteroidSpeedPin.transform;
+        textObjectSpeed.transform.position = asteroidSpeedPin.transform.position;
+        textObjectSpeed.transform.Translate(new Vector3(-0.9f, 0f, 0f));
+        textMeshSpeed = textObjectSpeed.AddComponent<TextMesh>();
+        textMeshSpeed.text = currentAsteroidSpeedPinUnit.ToString() + " км/с";
+        textMeshSpeed.anchor = TextAnchor.MiddleCenter;
+        textMeshSpeed.characterSize = 0.2f;
+        textMeshSpeed.fontSize = 18;
 
         usersAnswer = 0;
     }
@@ -360,6 +388,7 @@ public class ExperimentController : MonoBehaviour
             {
                 asteroidSizePin.transform.Translate(Vector3.up * numberOfPixelsInOneUnit * 0.1f);
                 currentAsteroidSizePinUnit++;
+                UpdateAsteroidSizeText();
             }
         }
         else
@@ -376,6 +405,7 @@ public class ExperimentController : MonoBehaviour
             {
                 asteroidSizePin.transform.Translate(Vector3.up * - numberOfPixelsInOneUnit * 0.1f);
                 currentAsteroidSizePinUnit--;
+                UpdateAsteroidSizeText();
             }
         }
         else
@@ -392,6 +422,7 @@ public class ExperimentController : MonoBehaviour
             {
                 asteroidSpeedPin.transform.Translate(Vector3.up * numberOfPixelsInOneUnit * 0.1f);
                 currentAsteroidSpeedPinUnit++;
+                UpdateAsteroidSpeedText();
             }
         }
         else
@@ -408,6 +439,7 @@ public class ExperimentController : MonoBehaviour
             {
                 asteroidSpeedPin.transform.Translate(Vector3.up * -numberOfPixelsInOneUnit * 0.1f);
                 currentAsteroidSpeedPinUnit--;
+                UpdateAsteroidSpeedText();
             }
         }
         else
@@ -424,5 +456,15 @@ public class ExperimentController : MonoBehaviour
     public void setUsersAnswer(int zero)
     {
         usersAnswer = zero;
+    }
+
+    private void UpdateAsteroidSizeText()
+    {
+        textMeshSize.text = currentAsteroidSizePinUnit.ToString() + " км";
+    }
+
+    private void UpdateAsteroidSpeedText()
+    {
+        textMeshSpeed.text = currentAsteroidSpeedPinUnit.ToString() + " км/с";
     }
 }
