@@ -264,6 +264,7 @@ public class ExperimentController : MonoBehaviour
             {
                 asteroidMain.SetActive(false);
                 asteroidHasNotExploded = false;
+                ActivateExplosionEffectSmall();
                 usersAnswer = 2;
             }
             else
@@ -306,6 +307,32 @@ public class ExperimentController : MonoBehaviour
         if (ExplosionEffectPrefab != null)
         {
             explosionEffectObject = Instantiate(ExplosionEffectPrefab, centerOfPlanet, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("ExplosionEffectPrefab field is not assigned on object " + gameObject.name);
+        }
+    }
+
+    private void ActivateExplosionEffectSmall()
+    {
+        if (explosionEffectObject != null)
+        {
+            Destroy(explosionEffectObject);
+        }
+        if (ExplosionEffectPrefab != null)
+        {
+            SphereCollider asteroidCollider = asteroidMain.GetComponent<SphereCollider>();
+            if (asteroidCollider != null) 
+            {
+                Vector3 placeOfExplosion = asteroidCollider.ClosestPointOnBounds(centerOfPlanet);
+                explosionEffectObject = Instantiate(ExplosionEffectPrefab, placeOfExplosion, Quaternion.identity);
+                explosionEffectObject.transform.localScale = Vector3.one * 0.3f;
+            }
+            else
+            {
+                Debug.LogWarning("There is no SphereCollider component on object " + asteroidMain.name);
+            }
         }
         else
         {
