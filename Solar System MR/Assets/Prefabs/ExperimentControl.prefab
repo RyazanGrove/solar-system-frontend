@@ -55,9 +55,9 @@ MonoBehaviour:
   numberOfCopies: 10
   asteroidMainPrefab: {fileID: 994366902549286697, guid: bd6b15b8ad7d2a94ab0934445cf5ac24,
     type: 3}
-  centerOfPlanet: {x: 0, y: 0, z: 0}
+  centerOfPlanet: {x: -1, y: 0, z: 0}
   sphereSpawnRadius: 1
-  asteroidMainPosition: {x: -2, y: 2, z: -2}
+  asteroidMainPosition: {x: -2.5, y: 2, z: -2}
   asteroidMainColliderRadious: 0.25
   asteroidSpeed: 1
   speedUnit: 0.1

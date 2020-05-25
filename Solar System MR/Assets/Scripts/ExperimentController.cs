@@ -176,16 +176,16 @@ public class ExperimentController : MonoBehaviour
         for (int i = 0; i < numberOfCopies; i++)
         {
             //spawn objects
-            Vector3 asteroidPosition1 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2));
+            Vector3 asteroidPosition1 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.x, Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.y, Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.z);
             asteroid1 = Instantiate(asteroidPrefab1, asteroidPosition1, Quaternion.identity);
             asteroidArray[4 * i] = asteroid1;
-            Vector3 asteroidPosition2 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2));
+            Vector3 asteroidPosition2 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.x, Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.y, Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.z);
             asteroid2 = Instantiate(asteroidPrefab2, asteroidPosition2, Quaternion.identity);
             asteroidArray[4 * i + 1] = asteroid2;
-            Vector3 asteroidPosition3 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2));
+            Vector3 asteroidPosition3 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.x, Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.y, Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.z);
             asteroid3 = Instantiate(asteroidPrefab3, asteroidPosition3, Quaternion.identity);
             asteroidArray[4 * i + 2] = asteroid3;
-            Vector3 asteroidPosition4 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2), Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2));
+            Vector3 asteroidPosition4 = new Vector3(Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.x, Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.y, Random.Range(-sphereSpawnRadius / 2, sphereSpawnRadius / 2) + centerOfPlanet.z);
             asteroid4 = Instantiate(asteroidPrefab4, asteroidPosition4, Quaternion.identity);
             asteroidArray[4 * i + 3] = asteroid4;
 
@@ -286,7 +286,7 @@ public class ExperimentController : MonoBehaviour
     private void SpawnEarth()
     {
         planetObject = Instantiate(planetPrefab, centerOfPlanet, Quaternion.identity);
-        planetObject.transform.position = Vector3.zero;
+        //planetObject.transform.position = Vector3.zero;
         planetObject.transform.localScale = new Vector3(sphereSpawnRadius * 3.5f, sphereSpawnRadius * 3.5f, sphereSpawnRadius * 3.5f);
     }
 
