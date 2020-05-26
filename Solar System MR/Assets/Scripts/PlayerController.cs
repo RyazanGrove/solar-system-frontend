@@ -19,6 +19,10 @@ public class PlayerController : NetworkBehaviour
 
     private ExperimentController experimentController;
 
+    private GameObject informationTask;
+    private GameObject informationWrongAnswer;
+    private GameObject informationCorrectAnswer;
+
     //size
     public void IncreaseAsteroidSize()
     {
@@ -104,8 +108,12 @@ public class PlayerController : NetworkBehaviour
     [ClientRpc]
     public void RpcSubmitAnswer()
     {
-        submitAnswerButton.interactable = false;
-        submitAnswerButton.GetComponent<Image>().enabled = false;
+        if (isLocalPlayer)
+        {
+            submitAnswerButtonObject.SetActive(false);
+            informationTask.SetActive(false);
+        }
+
         experimentController.StartAsteroidMovement();
     }
 
@@ -123,16 +131,26 @@ public class PlayerController : NetworkBehaviour
     [ClientRpc]
     public void RpcResetExperement()
     {
-        submitAnswerButton.interactable = true;
-        submitAnswerButton.GetComponent<Image>().enabled = true;
-        tryAgainButton.interactable = false;
-        tryAgainButton.GetComponent<Image>().enabled = false;
+        if (isLocalPlayer)
+        {
+            submitAnswerButtonObject.SetActive(true);
+            tryAgainButtonObject.SetActive(false);
+            informationTask.SetActive(true);
+            informationCorrectAnswer.SetActive(false);
+            informationWrongAnswer.SetActive(false);
+        }
         experimentController.ResetExperement();
     }
 
     void Start()
     {
         experimentController = GameObject.FindGameObjectWithTag("ExperimentControl").GetComponent<ExperimentController>();
+
+        informationTask = GameObject.FindGameObjectWithTag("InformationTask");
+        informationWrongAnswer = GameObject.FindGameObjectWithTag("InformationWrongAnswer");
+        informationCorrectAnswer = GameObject.FindGameObjectWithTag("InformationCorrectAnswer");
+
+        
 
         if (isLocalPlayer)
         {
@@ -144,16 +162,18 @@ public class PlayerController : NetworkBehaviour
             increaseSpeedButton.onClick.AddListener(() => { IncreaseAsteroidSpeed(); });
             decreaseSpeedButton = GameObject.FindGameObjectWithTag("DecreaseAsteroidSpeedButton").GetComponent<Button>();
             decreaseSpeedButton.onClick.AddListener(() => { DecreaseAsteroidSpeed(); });
-            //change Image and Interactible
+            
             submitAnswerButtonObject = GameObject.FindGameObjectWithTag("SubmitAnswerButton");
             submitAnswerButton = submitAnswerButtonObject.GetComponent<Button>();
             submitAnswerButton.onClick.AddListener(() => { SubmitAnswer(); });
-
             tryAgainButtonObject = GameObject.FindGameObjectWithTag("TryAgainButton");
             tryAgainButton = tryAgainButtonObject.GetComponent<Button>();
             tryAgainButton.onClick.AddListener(() => { ResetExperement(); });
-            tryAgainButton.interactable = false;
-            tryAgainButton.GetComponent<Image>().enabled = false;
+            tryAgainButtonObject.SetActive(false);
+
+            informationTask.SetActive(true);
+            informationWrongAnswer.SetActive(false);
+            informationCorrectAnswer.SetActive(false);
         }
     }
 
@@ -162,9 +182,20 @@ public class PlayerController : NetworkBehaviour
     {
         if(experimentController.getUsersAnswer() != 0)
         {
-            tryAgainButton.interactable = true;
-            tryAgainButton.GetComponent<Image>().enabled = true;
-            experimentController.setUsersAnswer(0);
+            if (isLocalPlayer)
+            {
+                if (experimentController.getUsersAnswer() == 1)
+                {
+                    informationCorrectAnswer.SetActive(true);
+                }
+                else
+                {
+                    informationWrongAnswer.SetActive(true);
+                }
+
+                tryAgainButtonObject.SetActive(true);
+                experimentController.setUsersAnswer(0);
+            }
         }
     }
 }

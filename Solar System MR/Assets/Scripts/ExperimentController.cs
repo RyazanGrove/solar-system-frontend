@@ -92,6 +92,12 @@ public class ExperimentController : MonoBehaviour
 
     private int usersAnswer;
 
+    [SerializeField]
+    [Range(1,20)]
+    private int correctAnswerSize;
+    [SerializeField]
+    [Range(1,20)]
+    private int correctAnswerSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -250,7 +256,7 @@ public class ExperimentController : MonoBehaviour
     public void TriggerExplosion()
     {
         //check correct answer
-        if (currentAsteroidSizePinUnit == 11 && currentAsteroidSpeedPinUnit == 2)
+        if (currentAsteroidSizePinUnit == correctAnswerSize && currentAsteroidSpeedPinUnit == correctAnswerSpeed)
         {
             SpawnAsteroids();
             asteroidMain.SetActive(false);
@@ -260,7 +266,7 @@ public class ExperimentController : MonoBehaviour
         }
         else
         {
-            if(currentAsteroidSizePinUnit * currentAsteroidSpeedPinUnit < 22)
+            if(currentAsteroidSizePinUnit * currentAsteroidSpeedPinUnit < correctAnswerSize * correctAnswerSpeed)
             {
                 asteroidMain.SetActive(false);
                 asteroidHasNotExploded = false;

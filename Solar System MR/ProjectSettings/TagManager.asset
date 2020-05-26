@@ -15,6 +15,9 @@ TagManager:
   - AsteroidSpeedSliderPin
   - SubmitAnswerButton
   - TryAgainButton
+  - InformationTask
+  - InformationWrongAnswer
+  - InformationCorrectAnswer
   layers:
   - Default
   - TransparentFX

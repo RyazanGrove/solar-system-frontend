@@ -73,6 +73,8 @@ MonoBehaviour:
   numberOfUnitsInSlider: 20
   asteroidSizePin: {fileID: 0}
   asteroidSpeedPin: {fileID: 0}
+  correctAnswerSize: 16
+  correctAnswerSpeed: 11
 --- !u!114 &5667372997386093075
 MonoBehaviour:
   m_ObjectHideFlags: 0
